@@ -24,3 +24,15 @@ dependencies {
 tasks.withType<KotlinCompile>() {
     kotlinOptions.jvmTarget = "16"
 }
+
+publishing {
+    publications {
+        create<MavenPublication>("maven") {
+            groupId = "me.furry"
+            artifactId = "LinearAlgebra"
+            version = "1.0.0"
+
+            from(components["java"])
+        }
+    }
+}
