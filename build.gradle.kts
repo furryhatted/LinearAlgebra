@@ -1,5 +1,8 @@
+import org.jetbrains.kotlin.gradle.tasks.KotlinCompile
+
 plugins {
     kotlin("jvm") version "1.5.32"
+    `maven-publish`
 }
 
 group = "me.furry"
@@ -16,4 +19,8 @@ dependencies {
     implementation("org.junit.jupiter:junit-jupiter:5.8.2")
     testImplementation("org.junit.jupiter:junit-jupiter:5.8.2")
 
+}
+
+tasks.withType<KotlinCompile>() {
+    kotlinOptions.jvmTarget = "16"
 }
